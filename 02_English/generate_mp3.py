@@ -11,7 +11,7 @@ VOICE = "en-US-JennyNeural"
 async def main():
     BASE_DIR = Path(__file__).resolve().parent
 
-    with open(BASE_DIR / "article.txt", "r", encoding="utf-8") as f:
+    with open(BASE_DIR / "file" / "article.txt", "r", encoding="utf-8") as f:
         text = f.read()
 
     communicate = edge_tts.Communicate(
@@ -19,7 +19,7 @@ async def main():
         voice=VOICE,
     )
 
-    await communicate.save(BASE_DIR / "mp4" / "article.mp3")
+    await communicate.save(BASE_DIR / "file" / "article.mp3")
 
 
 if __name__ == "__main__":
